@@ -1,9 +1,9 @@
-const GLOBAL_IMG_SIZE = 16;
+const GLOBAL_IMG_SCALE = 6;
 const GLOBAL_TEX_PATH = "textures/";
 
 const PATH_HUMAN = GLOBAL_TEX_PATH + "players/";
 
-class ImageAsset {
+class ImageTexture {
     constructor(source, width, height, sx, sy, swidth, sheight) {
         this.source = source;
 

@@ -11,7 +11,7 @@ function init() {
     canvas.width = WIDTH;
     canvas.height = HEIGHT;
 
-    player = new Player(center(WIDTH, Player.HUMAN_SIZE), center(HEIGHT, Player.HUMAN_SIZE));
+    player = new Player(center(WIDTH, Human.HUMAN_SIZE), center(HEIGHT, Human.HUMAN_SIZE));
 
     initKeyboard();
     initMouse();
@@ -22,11 +22,11 @@ function init() {
 function update() {
     requestAnimationFrame(update);
     time++;
-    player.update();
-
+    
     for(let human of people) {
         human.update();
     }
+    player.update();
     render();
 }
 function render() {
