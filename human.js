@@ -4,8 +4,8 @@ const TEX_MOVE_1 = 1;
 const TEX_MOVE_2 = 2;
 
 class Human extends Mob {
-    static HUMAN_SIZE = 96;
     static HUMAN_TEX_SIZE = 16;
+    static HUMAN_SIZE = Human.HUMAN_TEX_SIZE * GLOBAL_IMG_SCALE;
 
     static SPEED = 4;
 
@@ -16,5 +16,32 @@ class Human extends Mob {
         this.index = index;
 
         this.speed = Human.SPEED;
+    }
+
+    update() {
+        super.update();
+    }
+
+    updateMove() {
+        
+    }
+
+    startBehaviour() {
+        let DO_BEHAVIOUR = 3;
+
+        let behaviour = getRandom(0, DO_BEHAVIOUR);
+        if(!behaviour) {
+            this.startBehaviour();
+            return;
+        }   
+        
+        const MIN_INTERVAL_TIME = 500;
+        const MAX_INTERVAL_TIME = 3000;
+
+        let randomTime = getRandom(MIN_INTERVAL_TIME, MAX_INTERVAL_TIME);
+        setTimeout(this.#randBehaviour.bind(this), randomTime);
+    }
+    #randBehaviour() {
+        console.log(this.x, this.y);
     }
 }

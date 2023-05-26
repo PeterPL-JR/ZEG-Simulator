@@ -7,6 +7,8 @@ class Entity {
     update() {
     }
     render() {
-        this.texture.draw(ctx, this.x, this.y);
+        let renderX = getX(this.x);
+        let renderY = getY(this.y);
+        this.texture.draw(ctx, renderX, renderY);
     }
 }

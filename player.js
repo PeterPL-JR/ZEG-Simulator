@@ -1,4 +1,6 @@
-class Player extends Human {    
+class Player extends Human {
+    static PLAYER_SIZE = Human.HUMAN_SIZE;
+    
     constructor(x, y) {
         super("Peter", 1, x, y);
     }
